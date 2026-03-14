@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text.RegularExpressions;
 using System.Windows;
 
 namespace pr_24._106_pavlenko_2
@@ -11,6 +13,7 @@ namespace pr_24._106_pavlenko_2
             InitializeComponent();
         }
 
+        
         private void CalculateButton_Click(object sender, RoutedEventArgs e)
         {
             string sentence = InputTextBox.Text;
@@ -19,7 +22,13 @@ namespace pr_24._106_pavlenko_2
                 MessageBox.Show("Введите предложение.");
                 return;
             }
+            else if (Regex.IsMatch(sentence, @"[а-яА-ЯеЁ]"))
+            {
+                MessageBox.Show("На английском!");
+                return;
+            }
 
+         
             
             string lower = sentence.ToLower();
             int vowelCount = lower.Count(c => "aeiou".Contains(c));

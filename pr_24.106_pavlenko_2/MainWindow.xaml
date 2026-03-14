@@ -10,7 +10,7 @@
         <TextBlock Text="Введите предложение (на английском):" FontSize="14"/>
         <TextBox x:Name="InputTextBox" Height="30" FontSize="14" Margin="0,5,0,15"/>
         <Button x:Name="CalculateButton" Padding="10" FontSize="14" Width="120" HorizontalAlignment="Left" Click="CalculateButton_Click">
-            <Label Content="Label"/>
+            <Label Content="Посчитать"/>
         </Button>
 
         <TextBlock Text="Количество гласных:" FontSize="14" Margin="0,20,0,0"/>
